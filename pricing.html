@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transparent pricing for garage marketing services. Choose from starter, professional, or enterprise packages. No hidden fees.">
+    <meta name="keywords" content="garage marketing pricing, automotive marketing packages, SEO pricing, Google Ads management cost">
+    <title>Pricing Plans | Garage Marketing Solutions UK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #DC143C;
+            --dark-red: #B01030;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+            --white: #ffffff;
+            --text-gray: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header - Same as other pages */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(220, 20, 60, 0.3);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--dark-gray);
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid rgba(220, 20, 60, 0.3);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary-red);
+        }
+
+        .cta-button {
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            text-align: center;
+            padding: 120px 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 span {
+            color: var(--primary-red);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--black);
+        }
+
+        .pricing-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            align-items: center;
+        }
+
+        .toggle-label {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        .toggle-label.active {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--dark-gray);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(220, 20, 60, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(220, 20, 60, 0.3);
+            border-color: var(--primary-red);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--light-gray) 100%);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 0.5rem 3rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .pricing-card p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .price-period {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .btn-pricing {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-primary-pricing {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        .btn-primary-pricing:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+        }
+
+        .btn-secondary-pricing {
+            background: transparent;
+            color: var(--primary-red);
+        }
+
+        .btn-secondary-pricing:hover {
+            background: var(--primary-red);
+            color: var(--white);
+        }
+
+        /* Add-ons Section */
+        .addons {
+            padding: 6rem 2rem;
+            background: var(--dark-gray);
+        }
+
+        .addons-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 span {
+            color: var(--primary-red);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .addon-card {
+            background: var(--black);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .addon-card:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-red);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.2);
+        }
+
+        .addon-info h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .addon-info p {
+            color: var(--text-gray);
+        }
+
+        .addon-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        .addon-price span {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--black);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(220, 20, 60, 0.2);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary-red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 2rem 1.5rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-white:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(220, 20, 60, 0.3);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-gray);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-red);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .addons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span>GARAGE</span> Marketing Solutions
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="services.html#seo">SEO Services</a>
+                        <a href="services.html#google-ads">Google Ads (PPC)</a>
+                        <a href="services.html#gmb">GMB Optimization</a>
+                        <a href="services.html#web-dev">Website Development</a>
+                    </div>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Get Free Quote</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Simple, <span>Transparent</span> Pricing</h1>
+            <p>Choose the perfect package for your garage. No hidden fees, no contracts. Cancel anytime.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-container">
+            <div class="pricing-grid">
+                <!-- Starter Package -->
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p>Perfect for small garages getting started with digital marketing</p>
+                    <div class="price">£499<span>/mo</span></div>
+                    <div class="price-period">Billed monthly</div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Google Business Profile Setup</li>
+                        <li><span class="check-icon">✓</span> Basic SEO Optimization</li>
+                        <li><span class="check-icon">✓</span> 5 Service Pages</li>
+                        <li><span class="check-icon">✓</span> Monthly Performance Report</li>
+                        <li><span class="check-icon">✓</span> Email Support</li>
+                        <li><span class="check-icon">✓</span> Social Media Setup</li>
+                    </ul>
+                    <a href="contact.html" class="btn-pricing btn-secondary-pricing">Get Started</a>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <p>Our most popular package for growing garage businesses</p>
+                    <div class="price">£899<span>/mo</span></div>
+                    <div class="price-period">Billed monthly</div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Everything in Starter</li>
+                        <li><span class="check-icon">✓</span> Advanced SEO Campaign</li>
+                        <li><span class="check-icon">✓</span> Google Ads Management (£500/mo ad spend included)</li>
+                        <li><span class="check-icon">✓</span> GMB Weekly Updates</li>
+                        <li><span class="check-icon">✓</span> 10 Service Pages</li>
+                        <li><span class="check-icon">✓</span> Bi-weekly Reporting</li>
+                        <li><span class="check-icon">✓</span> Priority Support</li>
+                        <li><span class="check-icon">✓</span> Review Management</li>
+                    </ul>
+                    <a href="contact.html" class="btn-pricing btn-primary-pricing">Get Started</a>
+                </div>
+
+                <!-- Enterprise Package -->
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p>For established garages dominating their local market</p>
+                    <div class="price">£1,499<span>/mo</span></div>
+                    <div class="price-period">Billed monthly</div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Everything in Professional</li>
+                        <li><span class="check-icon">✓</span> Advanced Google Ads (£1,500/mo ad spend included)</li>
+                        <li><span class="check-icon">✓</span> Custom Website Development</li>
+                        <li><span class="check-icon">✓</span> Unlimited Service Pages</li>
+                        <li><span class="check-icon">✓</span> Weekly Reporting & Strategy Calls</li>
+                        <li><span class="check-icon">✓</span> Dedicated Account Manager</li>
+                        <li><span class="check-icon">✓</span> Social Media Management</li>
+                        <li><span class="check-icon">✓</span> Reputation Management</li>
+                        <li><span class="check-icon">✓</span> 24/7 Priority Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn-pricing btn-secondary-pricing">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-ons Section -->
+    <section class="addons">
+        <div class="addons-container">
+            <div class="section-header">
+                <h2>Optional <span>Add-Ons</span></h2>
+                <p>Enhance your package with these additional services</p>
+            </div>
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-info">
+                        <h4>Custom Website Design</h4>
+                        <p>Fully custom, mobile-responsive website</p>
+                    </div>
+                    <div class="addon-price">£1,999<span> one-time</span></div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-info">
+                        <h4>Video Marketing</h4>
+                        <p>Professional video production & marketing</p>
+                    </div>
+                    <div class="addon-price">£299<span>/mo</span></div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-info">
+                        <h4>Additional Google Ads Spend</h4>
+                        <p>Increase your advertising budget</p>
+                    </div>
+                    <div class="addon-price">£500+<span>/mo</span></div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-info">
+                        <h4>Logo & Branding Design</h4>
+                        <p>Professional logo and brand identity</p>
+                    </div>
+                    <div class="addon-price">£799<span> one-time</span></div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-info">
+                        <h4>Content Writing</h4>
+                        <p>4 blog posts per month</p>
+                    </div>
+                    <div class="addon-price">£199<span>/mo</span></div>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-info">
+                        <h4>Email Marketing</h4>
+                        <p>Automated email campaigns to customers</p>
+                    </div>
+                    <div class="addon-price">£149<span>/mo</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-container">
+            <div class="section-header">
+                <h2>Frequently Asked <span>Questions</span></h2>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Are there any setup fees or contracts?</h4>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No setup fees and no long-term contracts required. We operate on a month-to-month basis, and you can cancel anytime with 30 days notice. We believe in earning your business every single month.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How long until I see results?</h4>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Google Ads can generate leads within 24-48 hours. SEO typically takes 3-6 months to show significant results, but you'll see gradual improvements from month one. GMB optimization shows results within 2-4 weeks.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What if I need to upgrade or downgrade my package?</h4>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can upgrade or downgrade your package at any time. Changes take effect in the following billing cycle. Our team will help you transition smoothly between packages.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Do you work with garages outside the UK?</h4>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Currently, we specialize in the UK market as we have deep knowledge of local search behavior and regulations. However, we're expanding and would be happy to discuss your specific needs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What's included in the monthly reports?</h4>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our reports include website traffic, search rankings, Google Ads performance, lead generation metrics, GMB insights, and ROI analysis. Enterprise clients also get strategy recommendations and competitor analysis.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Can I just pay for one service instead of a package?</h4>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! While our packages offer the best value, we can create custom solutions focusing on just SEO, just Google Ads, or any single service. Contact us for custom pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Grow Your Garage Business?</h2>
+            <p>Get a free marketing audit and personalized growth strategy</p>
+            <a href="contact.html" class="btn-white">Get Your Free Audit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><span style="color: var(--primary-red);">GARAGE</span> Marketing Solutions</h3>
+                <p>Helping car garage owners get more bookings, MOTs, tyre replacement jobs, servicing, and so much more across the United Kingdom.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">tw</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#seo">SEO Services</a></li>
+                    <li><a href="services.html#google-ads">Google Ads</a></li>
+                    <li><a href="services.html#gmb">GMB Optimization</a></li>
+                    <li><a href="services.html#web-dev">Web Development</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <p><strong>Phone</strong></p>
+                            <p>+44 121 285 8490</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p>info@garagemarketingsolutions.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Garage Marketing Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
