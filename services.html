@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional digital marketing services for garages: SEO, Google Ads, GMB optimization, and web development. Proven strategies to grow your automotive business.">
-    <meta name="keywords" content="garage SEO, automotive PPC, Google Ads for garages, GMB optimization, garage website development">
+    <meta name="description"
+        content="Professional digital marketing services for garages: SEO, Google Ads, GMB optimization, and web development. Proven strategies to grow your automotive business.">
+    <meta name="keywords"
+        content="garage SEO, automotive PPC, Google Ads for garages, GMB optimization, garage website development">
     <title>Our Services | Garage Marketing Solutions UK</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="shortcut icon" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -56,7 +66,18 @@
             padding: 0 2rem;
         }
 
-        .logo {
+        .logo {}
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+            display: flex;
+            align-items: center;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
@@ -95,7 +116,7 @@
             left: 0;
             background: var(--dark-gray);
             min-width: 220px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
@@ -114,7 +135,7 @@
         .dropdown-content a {
             display: block;
             padding: 0.8rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .dropdown-content a:hover {
@@ -138,13 +159,14 @@
 
         /* Page Hero */
         .page-hero {
-            min-height: 50vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
             text-align: center;
-            padding: 120px 2rem 4rem;
+            padding: 140px 2rem 4rem;
+            margin-top: 80px;
             position: relative;
             overflow: hidden;
         }
@@ -362,6 +384,16 @@
             margin-bottom: 3rem;
         }
 
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 150px;
+            width: auto;
+        }
+
+
         .footer-column h3 {
             color: var(--white);
             margin-bottom: 1.5rem;
@@ -481,7 +513,73 @@
             }
         }
 
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+
         @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                background: var(--dark-gray);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(220, 20, 60, 0.3);
+                align-items: flex-start;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -496,14 +594,15 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <span>GARAGE</span> Marketing Solutions
+                <img src="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png" alt="Garage Marketing Solutions">
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="services.html">Services ▾</a>
@@ -519,6 +618,7 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="contact.html" class="cta-button">Get Free Quote</a></li>
             </ul>
+            <div class="mobile-menu" id="mobileMenu"><span></span><span></span><span></span></div>
         </nav>
     </header>
 
@@ -526,7 +626,8 @@
     <section class="page-hero">
         <div class="page-hero-content">
             <h1>Our <span>Marketing Services</span></h1>
-            <p>Comprehensive digital marketing solutions designed specifically for automotive garages, tyre shops, and towing businesses across the UK.</p>
+            <p>Comprehensive digital marketing solutions designed specifically for automotive garages, tyre shops, and
+                towing businesses across the UK.</p>
         </div>
     </section>
 
@@ -535,14 +636,17 @@
         <div class="service-container">
             <div class="service-content">
                 <h2><span>Search Engine</span> Optimization</h2>
-                <p>Dominate local search results and get found by customers actively searching for garage services in your area. Our proven SEO strategies have helped garages increase their organic traffic by an average of 300%.</p>
-                
+                <p>Dominate local search results and get found by customers actively searching for garage services in
+                    your area. Our proven SEO strategies have helped garages increase their organic traffic by an
+                    average of 300%.</p>
+
                 <div class="features-list">
                     <div class="feature-item">
                         <div class="feature-icon">🎯</div>
                         <div class="feature-text">
                             <h4>Local SEO Optimization</h4>
-                            <p>Rank higher in "near me" searches and Google Maps to capture high-intent local customers.</p>
+                            <p>Rank higher in "near me" searches and Google Maps to capture high-intent local customers.
+                            </p>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -556,14 +660,16 @@
                         <div class="feature-icon">🔗</div>
                         <div class="feature-text">
                             <h4>Link Building</h4>
-                            <p>High-quality backlinks from automotive directories and local websites to boost authority.</p>
+                            <p>High-quality backlinks from automotive directories and local websites to boost authority.
+                            </p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <div class="feature-icon">📊</div>
                         <div class="feature-text">
                             <h4>Technical SEO Audit</h4>
-                            <p>Complete website optimization for speed, mobile responsiveness, and search engine crawling.</p>
+                            <p>Complete website optimization for speed, mobile responsiveness, and search engine
+                                crawling.</p>
                         </div>
                     </div>
                 </div>
@@ -571,7 +677,8 @@
                 <a href="contact.html" class="btn-primary">Get SEO Quote</a>
             </div>
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="SEO Analytics Dashboard">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                    alt="SEO Analytics Dashboard">
                 <div class="results-box">
                     <h3>Average Results</h3>
                     <div class="results-stats">
@@ -597,7 +704,8 @@
     <section class="service-detail" id="google-ads">
         <div class="service-container">
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Google Ads Campaign">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                    alt="Google Ads Campaign">
                 <div class="results-box">
                     <h3>Average Results</h3>
                     <div class="results-stats">
@@ -618,8 +726,10 @@
             </div>
             <div class="service-content">
                 <h2><span>Google Ads</span> Management</h2>
-                <p>Get instant visibility and quality leads with professionally managed Google Ads campaigns. Our experts optimize every pound of your ad spend to bring you the maximum number of bookings at the lowest cost.</p>
-                
+                <p>Get instant visibility and quality leads with professionally managed Google Ads campaigns. Our
+                    experts optimize every pound of your ad spend to bring you the maximum number of bookings at the
+                    lowest cost.</p>
+
                 <div class="features-list">
                     <div class="feature-item">
                         <div class="feature-icon">🎯</div>
@@ -661,8 +771,9 @@
         <div class="service-container">
             <div class="service-content">
                 <h2><span>Google Business</span> Profile Optimization</h2>
-                <p>Your Google Business Profile is often the first impression potential customers have of your garage. We optimize every aspect to maximize visibility, trust, and customer engagement.</p>
-                
+                <p>Your Google Business Profile is often the first impression potential customers have of your garage.
+                    We optimize every aspect to maximize visibility, trust, and customer engagement.</p>
+
                 <div class="features-list">
                     <div class="feature-item">
                         <div class="feature-icon">⭐</div>
@@ -697,7 +808,8 @@
                 <a href="contact.html" class="btn-primary">Optimize My GMB</a>
             </div>
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Google Business Profile">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                    alt="Google Business Profile">
                 <div class="results-box">
                     <h3>Average Results</h3>
                     <div class="results-stats">
@@ -723,7 +835,8 @@
     <section class="service-detail" id="web-dev">
         <div class="service-container">
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop" alt="Website Development">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop"
+                    alt="Website Development">
                 <div class="results-box">
                     <h3>What You Get</h3>
                     <div class="results-stats">
@@ -744,8 +857,9 @@
             </div>
             <div class="service-content">
                 <h2><span>Website</span> Development</h2>
-                <p>Modern, professional websites that turn visitors into customers. Built specifically for the automotive industry with features that drive bookings and showcase your services.</p>
-                
+                <p>Modern, professional websites that turn visitors into customers. Built specifically for the
+                    automotive industry with features that drive bookings and showcase your services.</p>
+
                 <div class="features-list">
                     <div class="feature-item">
                         <div class="feature-icon">📱</div>
@@ -793,8 +907,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3><span style="color: var(--primary-red);">GARAGE</span> Marketing Solutions</h3>
-                <p>Helping car garage owners get more bookings, MOTs, tyre replacement jobs, servicing, and so much more across the United Kingdom.</p>
+                <div class="footer-logo"><img src="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png"
+                        alt="Garage Marketing Solutions" style="height: 150px; width: auto;"></div>
+                <p>Helping car garage owners get more bookings, MOTs, tyre replacement jobs, servicing, and so much more
+                    across the United Kingdom.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon">f</a>
                     <a href="#" class="social-icon">in</a>
@@ -850,10 +966,28 @@
     <!-- Back to Top -->
     <div class="back-to-top" id="backToTop">↑</div>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">        // Mobile menu toggle
+        const mobileMenu = document.getElementById("mobileMenu");
+        const navLinks = document.getElementById("navLinks");
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
+    </script>
     <script>
         const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', function() {
+
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 300) {
                 backToTopButton.classList.add('visible');
             } else {
@@ -861,7 +995,7 @@
             }
         });
 
-        backToTopButton.addEventListener('click', function() {
+        backToTopButton.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
@@ -869,13 +1003,25 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+
                 if (target) {
-                    const offsetTop = target.offsetTop - 100;
-                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Close mobile menu after click
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const navLinks = document.getElementById('navLinks');
+
+                    if (mobileMenu && navLinks) {
+                        mobileMenu.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
                 }
             });
         });
     </script>
-</body>
-</html>
