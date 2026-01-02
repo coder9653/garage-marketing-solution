@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Garage Marketing Solutions - UK's leading digital marketing agency specializing in automotive businesses. Our story, mission, and team.">
+    <meta name="description"
+        content="Learn about Garage Marketing Solutions - UK's leading digital marketing agency specializing in automotive businesses. Our story, mission, and team.">
     <meta name="keywords" content="about garage marketing, automotive marketing agency UK, digital marketing team">
     <title>About Us | Garage Marketing Solutions UK</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="shortcut icon" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -56,7 +63,18 @@
             padding: 0 2rem;
         }
 
-        .logo {
+        .logo {}
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+            display: flex;
+            align-items: center;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
@@ -95,7 +113,7 @@
             left: 0;
             background: var(--dark-gray);
             min-width: 220px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
@@ -114,7 +132,7 @@
         .dropdown-content a {
             display: block;
             padding: 0.8rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .dropdown-content a:hover {
@@ -144,7 +162,8 @@
             justify-content: center;
             background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
             text-align: center;
-            padding: 120px 2rem 4rem;
+            padding: 140px 2rem 4rem;
+            margin-top: 80px;
             position: relative;
             overflow: hidden;
         }
@@ -162,8 +181,17 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
         }
 
         .page-hero-content {
@@ -456,6 +484,16 @@
             margin-bottom: 3rem;
         }
 
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 150px;
+            width: auto;
+        }
+
+
         .footer-column h3 {
             color: var(--white);
             margin-bottom: 1.5rem;
@@ -586,7 +624,73 @@
             }
         }
 
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+
         @media (max-width: 768px) {
+            .mobile-menu {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                background: var(--dark-gray);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(220, 20, 60, 0.3);
+                align-items: flex-start;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -605,14 +709,15 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <span>GARAGE</span> Marketing Solutions
+                <img src="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png" alt="Garage Marketing Solutions">
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="services.html">Services ▾</a>
@@ -628,6 +733,7 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="contact.html" class="cta-button">Get Free Quote</a></li>
             </ul>
+            <div class="mobile-menu" id="mobileMenu"><span></span><span></span><span></span></div>
         </nav>
     </header>
 
@@ -635,7 +741,8 @@
     <section class="page-hero">
         <div class="page-hero-content">
             <h1>Driving <span>Success</span> for Garage Businesses Since 2018</h1>
-            <p>We're not just another marketing agency. We're automotive industry specialists who understand the unique challenges and opportunities of running a garage business in the UK.</p>
+            <p>We're not just another marketing agency. We're automotive industry specialists who understand the unique
+                challenges and opportunities of running a garage business in the UK.</p>
         </div>
     </section>
 
@@ -644,12 +751,19 @@
         <div class="story-container">
             <div class="story-content">
                 <h2>Our <span>Story</span></h2>
-                <p>Garage Marketing Solutions was founded in 2018 by a team of digital marketing experts who saw a glaring gap in the market. While thousands of garages across the UK struggled to attract customers online, generic marketing agencies failed to understand the automotive industry's unique needs.</p>
-                <p>We started with a simple mission: help independent garages compete with large franchise dealerships by leveraging the power of digital marketing. What began as a small team of three has grown into a full-service agency serving over 250 garage businesses across the United Kingdom.</p>
-                <p>Today, we're proud to be the UK's leading digital marketing agency specializing exclusively in automotive businesses. Our campaigns have generated over £2.5 million in revenue for our clients, and we're just getting started.</p>
+                <p>Garage Marketing Solutions was founded in 2018 by a team of digital marketing experts who saw a
+                    glaring gap in the market. While thousands of garages across the UK struggled to attract customers
+                    online, generic marketing agencies failed to understand the automotive industry's unique needs.</p>
+                <p>We started with a simple mission: help independent garages compete with large franchise dealerships
+                    by leveraging the power of digital marketing. What began as a small team of three has grown into a
+                    full-service agency serving over 250 garage businesses across the United Kingdom.</p>
+                <p>Today, we're proud to be the UK's leading digital marketing agency specializing exclusively in
+                    automotive businesses. Our campaigns have generated over £2.5 million in revenue for our clients,
+                    and we're just getting started.</p>
             </div>
             <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Team collaboration">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
+                    alt="Team collaboration">
             </div>
         </div>
     </section>
@@ -665,32 +779,38 @@
                 <div class="value-card">
                     <div class="value-icon">🎯</div>
                     <h3>Results-Driven</h3>
-                    <p>We measure success by one metric: your ROI. Every strategy, every campaign, every decision is made with your bottom line in mind.</p>
+                    <p>We measure success by one metric: your ROI. Every strategy, every campaign, every decision is
+                        made with your bottom line in mind.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
                     <h3>Transparency</h3>
-                    <p>No smoke and mirrors, no hidden fees. We provide clear reporting and honest communication about what's working and what's not.</p>
+                    <p>No smoke and mirrors, no hidden fees. We provide clear reporting and honest communication about
+                        what's working and what's not.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🔧</div>
                     <h3>Industry Expertise</h3>
-                    <p>We don't just understand marketing; we understand your business. Our team includes former garage owners and automotive industry veterans.</p>
+                    <p>We don't just understand marketing; we understand your business. Our team includes former garage
+                        owners and automotive industry veterans.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">⚡</div>
                     <h3>Innovation</h3>
-                    <p>The digital landscape changes fast. We stay ahead of trends and continuously test new strategies to keep you competitive.</p>
+                    <p>The digital landscape changes fast. We stay ahead of trends and continuously test new strategies
+                        to keep you competitive.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">💬</div>
                     <h3>Partnership</h3>
-                    <p>We're not just a vendor; we're your marketing partner. Your success is our success, and we're invested in your long-term growth.</p>
+                    <p>We're not just a vendor; we're your marketing partner. Your success is our success, and we're
+                        invested in your long-term growth.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">✨</div>
                     <h3>Excellence</h3>
-                    <p>Good enough isn't good enough. We're obsessed with delivering exceptional results and outstanding customer service.</p>
+                    <p>Good enough isn't good enough. We're obsessed with delivering exceptional results and outstanding
+                        customer service.</p>
                 </div>
             </div>
         </div>
@@ -731,7 +851,8 @@
                     <div class="member-info">
                         <h3>David Richardson</h3>
                         <div class="role">Founder & CEO</div>
-                        <p>Former garage owner with 15 years in the automotive industry. David founded GMS to help independent garages thrive in the digital age.</p>
+                        <p>Former garage owner with 15 years in the automotive industry. David founded GMS to help
+                            independent garages thrive in the digital age.</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -739,7 +860,8 @@
                     <div class="member-info">
                         <h3>Sarah Chen</h3>
                         <div class="role">Head of SEO</div>
-                        <p>SEO specialist with 10+ years experience. Sarah has helped over 100 garages achieve first-page Google rankings in competitive markets.</p>
+                        <p>SEO specialist with 10+ years experience. Sarah has helped over 100 garages achieve
+                            first-page Google rankings in competitive markets.</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -747,7 +869,8 @@
                     <div class="member-info">
                         <h3>Michael Thompson</h3>
                         <div class="role">Google Ads Director</div>
-                        <p>Certified Google Ads expert managing over £500k in monthly ad spend. Michael's campaigns consistently deliver 400%+ ROI for our clients.</p>
+                        <p>Certified Google Ads expert managing over £500k in monthly ad spend. Michael's campaigns
+                            consistently deliver 400%+ ROI for our clients.</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -755,7 +878,8 @@
                     <div class="member-info">
                         <h3>Emma Williams</h3>
                         <div class="role">Content & Social Media Lead</div>
-                        <p>Creative strategist specializing in automotive content marketing. Emma's campaigns have generated millions of social media impressions.</p>
+                        <p>Creative strategist specializing in automotive content marketing. Emma's campaigns have
+                            generated millions of social media impressions.</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -763,7 +887,8 @@
                     <div class="member-info">
                         <h3>James Patel</h3>
                         <div class="role">Web Development Manager</div>
-                        <p>Full-stack developer with expertise in creating high-converting automotive websites. James has built over 80 garage websites.</p>
+                        <p>Full-stack developer with expertise in creating high-converting automotive websites. James
+                            has built over 80 garage websites.</p>
                     </div>
                 </div>
                 <div class="team-member">
@@ -771,7 +896,8 @@
                     <div class="member-info">
                         <h3>Rachel Hughes</h3>
                         <div class="role">Client Success Manager</div>
-                        <p>Dedicated to ensuring every client achieves their goals. Rachel maintains our industry-leading 98% client satisfaction rate.</p>
+                        <p>Dedicated to ensuring every client achieves their goals. Rachel maintains our
+                            industry-leading 98% client satisfaction rate.</p>
                     </div>
                 </div>
             </div>
@@ -791,8 +917,10 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3><span style="color: var(--primary-red);">GARAGE</span> Marketing Solutions</h3>
-                <p>Helping car garage owners get more bookings, MOTs, tyre replacement jobs, servicing, and so much more across the United Kingdom.</p>
+                <div class="footer-logo"><img src="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png"
+                        alt="Garage Marketing Solutions" style="height: 150px; width: auto;"></div>
+                <p>Helping car garage owners get more bookings, MOTs, tyre replacement jobs, servicing, and so much more
+                    across the United Kingdom.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon">f</a>
                     <a href="#" class="social-icon">in</a>
@@ -848,10 +976,28 @@
     <!-- Back to Top -->
     <div class="back-to-top" id="backToTop">↑</div>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">        // Mobile menu toggle
+        const mobileMenu = document.getElementById("mobileMenu");
+        const navLinks = document.getElementById("navLinks");
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener("click", function () {
+                mobileMenu.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
+    </script>
     <script>
         const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', function() {
+
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 300) {
                 backToTopButton.classList.add('visible');
             } else {
@@ -859,9 +1005,10 @@
             }
         });
 
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
-</body>
-</html>
