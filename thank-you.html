@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for contacting Garage Marketing Solutions. We'll be in touch soon!">
+    <title>Thank You | Garage Marketing Solutions UK</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="shortcut icon" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #DC143C;
+            --dark-red: #B01030;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+            --white: #ffffff;
+            --text-gray: #b0b0b0;
+            --success-green: #4CAF50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            animation: float 8s infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary-red);
+            position: absolute;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .thank-you-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Success Animation Container */
+        .success-animation {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        /* Email Envelope Animation */
+        .envelope-wrapper {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            position: relative;
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .envelope {
+            position: relative;
+            width: 200px;
+            height: 140px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(220, 20, 60, 0.3);
+        }
+
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 70px solid var(--primary-red);
+            transform-origin: top;
+            animation: flap 1.5s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes flap {
+            0% {
+                transform: rotateX(0deg);
+            }
+            50% {
+                transform: rotateX(-180deg);
+            }
+            100% {
+                transform: rotateX(-180deg);
+            }
+        }
+
+        .envelope::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid var(--dark-gray);
+        }
+
+        .letter {
+            position: absolute;
+            width: 160px;
+            height: 100px;
+            background: var(--white);
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%) translateY(0);
+            border-radius: 4px;
+            animation: letterSlide 1.5s ease forwards;
+            animation-delay: 0.5s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes letterSlide {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-40px);
+            }
+        }
+
+        .letter-lines {
+            padding: 20px;
+        }
+
+        .letter-line {
+            height: 3px;
+            background: var(--primary-red);
+            margin-bottom: 8px;
+            border-radius: 2px;
+        }
+
+        .letter-line:nth-child(1) { width: 80%; }
+        .letter-line:nth-child(2) { width: 100%; }
+        .letter-line:nth-child(3) { width: 60%; }
+
+        /* Success Checkmark */
+        .checkmark-wrapper {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            background: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.5);
+            animation: scaleIn 0.5s ease forwards;
+            animation-delay: 2s;
+            opacity: 0;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .checkmark {
+            width: 30px;
+            height: 50px;
+            border: solid var(--white);
+            border-width: 0 5px 5px 0;
+            transform: rotate(45deg);
+            animation: checkDraw 0.5s ease forwards;
+            animation-delay: 2.2s;
+            opacity: 0;
+        }
+
+        @keyframes checkDraw {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+            100% {
+                height: 50px;
+                opacity: 1;
+            }
+        }
+
+        /* Text Content */
+        .thank-you-content {
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 2.5s;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .thank-you-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-red), var(--white));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .thank-you-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-content p.highlight {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: slideUp 1s ease forwards;
+            animation-delay: 3s;
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-red);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+        }
+
+        .info-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 3.5s;
+            opacity: 0;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Contact Info */
+        .contact-urgent {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(220, 20, 60, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(220, 20, 60, 0.3);
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 4s;
+            opacity: 0;
+        }
+
+        .contact-urgent h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-urgent p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-urgent a {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-urgent a:hover {
+            color: var(--white);
+        }
+
+        /* Auto-redirect Timer */
+        .redirect-timer {
+            margin-top: 2rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 4.5s;
+            opacity: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 2rem 1rem;
+            }
+
+            .thank-you-content h1 {
+                font-size: 2rem;
+            }
+
+            .thank-you-content p {
+                font-size: 1rem;
+            }
+
+            .envelope-wrapper {
+                width: 150px;
+                height: 150px;
+            }
+
+            .envelope {
+                width: 150px;
+                height: 105px;
+            }
+
+            .envelope::before {
+                border-left: 75px solid transparent;
+                border-right: 75px solid transparent;
+                border-top: 52.5px solid var(--primary-red);
+            }
+
+            .envelope::after {
+                border-left: 75px solid transparent;
+                border-right: 75px solid transparent;
+                border-bottom: 52.5px solid var(--dark-gray);
+            }
+
+            .letter {
+                width: 120px;
+                height: 75px;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    
+/* ========== MOBILE RESPONSIVE CSS ========== */
+@media (max-width: 479px) {
+    body { font-size: 14px; }
+    nav { padding: 0 1rem; }
+    .logo img { height: 45px !important; }
+    h1 { font-size: 1.75rem !important; line-height: 1.3; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    
+    .hero { padding: 6rem 1rem 3rem; min-height: auto; }
+    .hero-content { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+    .hero-text h1 { font-size: 1.75rem !important; }
+    .hero-buttons { flex-direction: column; gap: 1rem; }
+    .btn-primary, .btn-secondary { width: 100%; padding: 0.9rem 1.5rem; }
+    .phone-mockup { max-width: 280px; }
+    
+    .stats-container { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .stat-number { font-size: 2.5rem; }
+    
+    .benefits-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .benefit-card { padding: 1.5rem; }
+    
+    .why-choose-content,
+    .local-seo-content,
+    .get-in-front-content,
+    .metrics-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .mockup-grid { grid-template-columns: 1fr; }
+    .problems-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    
+    .services-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .services-detail-grid { grid-template-columns: 1fr !important; padding: 0 1rem; }
+    .service-card { padding: 1.5rem; }
+    .service-detail { padding: 2rem 1.5rem; }
+    .service-image { height: 180px; }
+    
+    .process-steps { grid-template-columns: 1fr; gap: 2rem; }
+    .step-number { width: 60px; height: 60px; font-size: 1.5rem; }
+    
+    .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .testimonial-card { padding: 1.5rem; }
+    
+    .faq-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .faq-question h3 { font-size: 0.9rem; }
+    
+    .pricing-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .pricing-card { padding: 2rem 1.5rem; }
+    
+    .values-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+    
+    .contact-container { grid-template-columns: 1fr; padding: 0 1rem; }
+    .contact-methods { grid-template-columns: 1fr; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+        font-size: 16px;
+    }
+    
+    .footer-content { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+    .footer-logo img { height: 60px; }
+    
+    .whatsapp-button span { display: none !important; }
+    .whatsapp-button { 
+        padding: 0.8rem; 
+        border-radius: 50%; 
+        width: 56px; 
+        height: 56px; 
+        justify-content: center; 
+    }
+    .whatsapp-float { bottom: 20px; right: 20px; }
+    .back-to-top { bottom: 90px; right: 20px; width: 45px; height: 45px; }
+    
+    section { padding: 3rem 1rem !important; }
+    .section-header h2 { font-size: 1.75rem !important; }
+    
+    .thank-you-container { padding: 2rem 1rem; }
+    .envelope-wrapper { width: 150px; height: 150px; }
+    .envelope { width: 150px; height: 105px; }
+    .envelope::before {
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-top: 52.5px solid var(--primary-red);
+    }
+    .envelope::after {
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-bottom: 52.5px solid var(--dark-gray);
+    }
+    .letter { width: 120px; height: 75px; }
+    .info-cards { grid-template-columns: 1fr; }
+    .action-buttons { flex-direction: column; }
+}
+
+@media (min-width: 390px) and (max-width: 479px) {
+    h1 { font-size: 2rem !important; }
+    .phone-mockup { max-width: 320px; }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-content { grid-template-columns: repeat(2, 1fr); }
+    .whatsapp-button span { display: inline !important; }
+    .whatsapp-button { padding: 1rem 2rem; width: auto; height: auto; border-radius: 50px; }
+}
+
+@media (min-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr 1fr; }
+    .stats-container { grid-template-columns: repeat(4, 1fr); }
+    .process-steps { grid-template-columns: repeat(4, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .whatsapp-float { bottom: calc(20px + env(safe-area-inset-bottom)); }
+    .back-to-top { bottom: calc(90px + env(safe-area-inset-bottom)); }
+}
+
+</style>
+</head>
+<body>
+    <!-- Animated Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Content -->
+    <div class="thank-you-container">
+        <!-- Email Animation -->
+        <div class="success-animation">
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="letter">
+                        <div class="letter-lines">
+                            <div class="letter-line"></div>
+                            <div class="letter-line"></div>
+                            <div class="letter-line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkmark-wrapper">
+                    <div class="checkmark"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thank You Content -->
+        <div class="thank-you-content">
+            <h1>Message Received! ✉️</h1>
+            <p class="highlight">Thank you for contacting Garage Marketing Solutions!</p>
+            <p>We've successfully received your message and it's on its way to our team. We're excited to help grow your garage business!</p>
+
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">⏱️</div>
+                    <h3>Quick Response</h3>
+                    <p>We'll respond within 24 hours (usually much faster!)</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon">📧</div>
+                    <h3>Check Your Email</h3>
+                    <p>Look out for our email with next steps and your free audit details</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon">🚀</div>
+                    <h3>Get Started</h3>
+                    <p>We'll schedule your free garage marketing audit and strategy call</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="index.html" class="btn-primary">Back to Homepage</a>
+                <a href="services.html" class="btn-secondary">Explore Our Services</a>
+            </div>
+
+            <!-- Urgent Contact -->
+            <div class="contact-urgent">
+                <h3>🔥 Need Immediate Assistance?</h3>
+                <p>For urgent inquiries, call us directly:</p>
+                <a href="tel:+447490302600">+44 7490302600</a>
+                <p style="margin-top: 1rem;">Or chat with us on <a href="https://wa.me/447490302600" target="_blank" style="color: #25D366;">WhatsApp</a></p>
+            </div>
+
+            <!-- Auto-redirect Timer -->
+            <div class="redirect-timer">
+                <p>You'll be automatically redirected to the homepage in <span id="countdown">15</span> seconds...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    window.addEventListener('scroll', function () {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenu.addEventListener('click', function () {
+        mobileMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

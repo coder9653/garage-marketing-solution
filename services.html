@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional digital marketing services for garages: SEO, Google Ads, GMB optimization, and web development. Proven strategies to grow your automotive business.">
+    <title>Our Services | Garage Marketing Solutions UK</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+    <link rel="shortcut icon" href="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #DC143C;
+            --dark-red: #B01030;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+            --white: #ffffff;
+            --text-gray: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(220, 20, 60, 0.3);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--dark-gray);
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid rgba(220, 20, 60, 0.3);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--primary-red);
+        }
+
+        .cta-button {
+            background: var(--primary-red);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.5);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .page-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            text-align: center;
+            padding: 140px 2rem 4rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 span {
+            color: var(--primary-red);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .service-detail {
+            padding: 6rem 2rem;
+            background: var(--dark-gray);
+        }
+
+        .service-detail:nth-child(even) {
+            background: var(--black);
+        }
+
+        .service-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-content.reverse {
+            direction: rtl;
+        }
+
+        .service-content.reverse>* {
+            direction: ltr;
+        }
+
+        .service-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-text h2 span {
+            color: var(--primary-red);
+        }
+
+        .service-text p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--light-gray);
+            border-left: 4px solid var(--primary-red);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-features li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .service-features strong {
+            color: var(--white);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-results {
+            background: var(--primary-red);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-results h3 {
+            margin-bottom: 1rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .service-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--primary-red);
+        }
+
+        .service-image-container img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary-red);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+        }
+
+        footer {
+            background: var(--dark-gray);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(220, 20, 60, 0.3);
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-gray);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-red);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #29A71A;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--dark-red);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .service-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .service-content.reverse {
+                direction: ltr;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                background: var(--dark-gray);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                border-left: 1px solid rgba(220, 20, 60, 0.3);
+                align-items: flex-start;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0.5rem;
+                margin-left: 1rem;
+                box-shadow: none;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-text h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-button span {
+                display: none;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .back-to-top {
+                bottom: 90px;
+                right: 20px;
+            }
+        }
+    
+/* ========== MOBILE RESPONSIVE CSS ========== */
+@media (max-width: 479px) {
+    body { font-size: 14px; }
+    nav { padding: 0 1rem; }
+    .logo img { height: 45px !important; }
+    h1 { font-size: 1.75rem !important; line-height: 1.3; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.25rem !important; }
+    
+    .hero { padding: 6rem 1rem 3rem; min-height: auto; }
+    .hero-content { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+    .hero-text h1 { font-size: 1.75rem !important; }
+    .hero-buttons { flex-direction: column; gap: 1rem; }
+    .btn-primary, .btn-secondary { width: 100%; padding: 0.9rem 1.5rem; }
+    .phone-mockup { max-width: 280px; }
+    
+    .stats-container { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .stat-number { font-size: 2.5rem; }
+    
+    .benefits-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .benefit-card { padding: 1.5rem; }
+    
+    .why-choose-content,
+    .local-seo-content,
+    .get-in-front-content,
+    .metrics-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .mockup-grid { grid-template-columns: 1fr; }
+    .problems-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    
+    .services-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .services-detail-grid { grid-template-columns: 1fr !important; padding: 0 1rem; }
+    .service-card { padding: 1.5rem; }
+    .service-detail { padding: 2rem 1.5rem; }
+    .service-image { height: 180px; }
+    
+    .process-steps { grid-template-columns: 1fr; gap: 2rem; }
+    .step-number { width: 60px; height: 60px; font-size: 1.5rem; }
+    
+    .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1rem; }
+    .testimonial-card { padding: 1.5rem; }
+    
+    .faq-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .faq-question h3 { font-size: 0.9rem; }
+    
+    .pricing-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .pricing-card { padding: 2rem 1.5rem; }
+    
+    .values-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+    
+    .contact-container { grid-template-columns: 1fr; padding: 0 1rem; }
+    .contact-methods { grid-template-columns: 1fr; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+        font-size: 16px;
+    }
+    
+    .footer-content { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+    .footer-logo img { height: 60px; }
+    
+    .whatsapp-button span { display: none !important; }
+    .whatsapp-button { 
+        padding: 0.8rem; 
+        border-radius: 50%; 
+        width: 56px; 
+        height: 56px; 
+        justify-content: center; 
+    }
+    .whatsapp-float { bottom: 20px; right: 20px; }
+    .back-to-top { bottom: 90px; right: 20px; width: 45px; height: 45px; }
+    
+    section { padding: 3rem 1rem !important; }
+    .section-header h2 { font-size: 1.75rem !important; }
+    
+    .thank-you-container { padding: 2rem 1rem; }
+    .envelope-wrapper { width: 150px; height: 150px; }
+    .envelope { width: 150px; height: 105px; }
+    .envelope::before {
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-top: 52.5px solid var(--primary-red);
+    }
+    .envelope::after {
+        border-left: 75px solid transparent;
+        border-right: 75px solid transparent;
+        border-bottom: 52.5px solid var(--dark-gray);
+    }
+    .letter { width: 120px; height: 75px; }
+    .info-cards { grid-template-columns: 1fr; }
+    .action-buttons { flex-direction: column; }
+}
+
+@media (min-width: 390px) and (max-width: 479px) {
+    h1 { font-size: 2rem !important; }
+    .phone-mockup { max-width: 320px; }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-container { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-content { grid-template-columns: repeat(2, 1fr); }
+    .whatsapp-button span { display: inline !important; }
+    .whatsapp-button { padding: 1rem 2rem; width: auto; height: auto; border-radius: 50px; }
+}
+
+@media (min-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr 1fr; }
+    .stats-container { grid-template-columns: repeat(4, 1fr); }
+    .process-steps { grid-template-columns: repeat(4, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .whatsapp-float { bottom: calc(20px + env(safe-area-inset-bottom)); }
+    .back-to-top { bottom: calc(90px + env(safe-area-inset-bottom)); }
+}
+
+</style>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png" alt="Garage Marketing Solutions">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#seo">SEO Services</a>
+                        <a href="#google-ads">Google Ads (PPC)</a>
+                        <a href="#gmb">GMB Optimization</a>
+                        <a href="#web-dev">Website Development</a>
+                    </div>
+                </li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Get Free Quote</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Our <span>Marketing Services</span></h1>
+            <p>Comprehensive digital marketing solutions tailored specifically for UK garages, MOT centres, and tyre
+                shops. Drive more bookings with our proven strategies.</p>
+        </div>
+    </section>
+
+    <!-- SEO Service -->
+    <section class="service-detail" id="seo">
+        <div class="service-content">
+            <div class="service-text">
+                <h2>Search Engine <span>Optimization (SEO)</span></h2>
+                <p>Dominate local search results and get found by customers searching for "MOT near me", "car
+                    servicing", and "tyre fitting" in your area. Our SEO strategies are specifically designed for the
+                    automotive industry.</p>
+
+                <ul class="service-features">
+                    <li>
+                        <strong>Local SEO Optimization</strong>
+                        Target customers in your specific area with location-based keywords and local search strategies.
+                    </li>
+                    <li>
+                        <strong>Content Marketing</strong>
+                        Engaging blog posts and service pages that rank well and convert visitors into customers.
+                    </li>
+                    <li>
+                        <strong>Link Building</strong>
+                        Quality backlinks from automotive directories and local business listings.
+                    </li>
+                    <li>
+                        <strong>Technical SEO Audit</strong>
+                        Comprehensive site analysis and optimization for maximum search visibility.
+                    </li>
+                </ul>
+
+                <div class="service-results">
+                    <h3>Average Results for Our Garage Clients:</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">300%</span>
+                            <span class="result-label">Traffic Increase</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">#1-3</span>
+                            <span class="result-label">Rankings</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">6-12</span>
+                            <span class="result-label">Months Results</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn-primary">Get Started</a>
+            </div>
+            <div class="service-image-container">
+                <img src="https://i.ibb.co/Fb1wVqHq/gsc2.jpg" alt="SEO Results Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Ads Service -->
+    <section class="service-detail" id="google-ads">
+        <div class="service-content reverse">
+            <div class="service-text">
+                <h2>Google Ads <span>(PPC)</span> Management</h2>
+                <p>Get instant visibility on Google with targeted paid advertising campaigns. We optimize your ad spend
+                    to bring you quality MOT and servicing leads at the lowest cost per booking.</p>
+
+                <ul class="service-features">
+                    <li>
+                        <strong>Targeted Campaigns</strong>
+                        Reach customers actively searching for garage services in your local area.
+                    </li>
+                    <li>
+                        <strong>Budget Optimization</strong>
+                        Maximize ROI by focusing spend on high-converting keywords and times.
+                    </li>
+                    <li>
+                        <strong>Call Extensions</strong>
+                        Make it easy for customers to call you directly from search results.
+                    </li>
+                    <li>
+                        <strong>Conversion Tracking</strong>
+                        Track every lead and booking to measure campaign performance accurately.
+                    </li>
+                </ul>
+
+                <div class="service-results">
+                    <h3>Average Results for Our Garage Clients:</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">450%</span>
+                            <span class="result-label">ROI Average</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">£8.50</span>
+                            <span class="result-label">Cost Per Lead</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">Instant</span>
+                            <span class="result-label">Results</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn-primary">Get Started</a>
+            </div>
+            <div class="service-image-container">
+                <img src="https://i.ibb.co/gZL4MdS7/g1.png" alt="Google Ads Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- GMB Service -->
+    <section class="service-detail" id="gmb">
+        <div class="service-content">
+            <div class="service-text">
+                <h2>Google Business <span>Profile Optimization</span></h2>
+                <p>Maximize your Google Business Profile (formerly Google My Business) to dominate local search results
+                    and attract more customers from your area. Essential for any garage wanting to show up on Google
+                    Maps.</p>
+
+                <ul class="service-features">
+                    <li>
+                        <strong>Profile Setup & Optimization</strong>
+                        Complete profile optimization with all relevant business information and categories.
+                    </li>
+                    <li>
+                        <strong>Review Management</strong>
+                        Strategy to get more 5-star reviews and respond professionally to all feedback.
+                    </li>
+                    <li>
+                        <strong>Photo Optimization</strong>
+                        Professional photos of your garage, team, and services to attract more customers.
+                    </li>
+                    <li>
+                        <strong>Posts & Updates</strong>
+                        Regular posts about special offers, MOT promotions, and garage news.
+                    </li>
+                </ul>
+
+                <div class="service-results">
+                    <h3>Average Results for Our Garage Clients:</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">250%</span>
+                            <span class="result-label">More Views</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">4.7★</span>
+                            <span class="result-label">Avg Rating</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">180%</span>
+                            <span class="result-label">More Calls</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn-primary">Get Started</a>
+            </div>
+            <div class="service-image-container">
+                <img src="https://i.ibb.co/ZZnGYXm/gmb1.jpg" alt="Google Business Profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Development Service -->
+    <section class="service-detail" id="web-dev">
+        <div class="service-content reverse">
+            <div class="service-text">
+                <h2>Website <span>Development</span></h2>
+                <p>Modern, mobile-responsive websites designed specifically for garages, MOT centres, and tyre shops.
+                    Built to convert visitors into bookings with fast loading times and SEO optimization.</p>
+
+                <ul class="service-features">
+                    <li>
+                        <strong>Mobile-First Design</strong>
+                        Responsive websites that work perfectly on all devices and screen sizes.
+                    </li>
+                    <li>
+                        <strong>Fast Loading Speed</strong>
+                        Optimized for speed to keep visitors engaged and improve search rankings.
+                    </li>
+                    <li>
+                        <strong>Online Booking System</strong>
+                        Allow customers to book MOTs and services directly from your website.
+                    </li>
+                    <li>
+                        <strong>SEO-Optimized</strong>
+                        Built with SEO best practices to help you rank higher in search results.
+                    </li>
+                </ul>
+
+                <div class="service-results">
+                    <h3>Website Features:</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">100%</span>
+                            <span class="result-label">Mobile Friendly</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">&lt;2s</span>
+                            <span class="result-label">Load Time</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">SSL</span>
+                            <span class="result-label">Secure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn-primary">Get Started</a>
+            </div>
+            <div class="service-image-container">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800" alt="Website Design">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="https://i.ibb.co/NgmRX16z/logo-removebg-preview.png" alt="Garage Marketing Solutions">
+                </div>
+                <p>Helping UK garage owners get more MOT bookings, tyre replacement jobs, car servicing appointments,
+                    and so much more across the United Kingdom.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">tw</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#seo">SEO Services</a></li>
+                    <li><a href="#google-ads">Google Ads</a></li>
+                    <li><a href="#gmb">GMB Optimization</a></li>
+                    <li><a href="#web-dev">Web Development</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <p><strong>Phone</strong></p>
+                            <p><a href="tel:+447490302600" style="color: #B0B0B0; text-decoration: none;">+44 7490302600</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p><a href="mailto:garagemarketingsolution@gmail.com" style="color: #B0B0B0; text-decoration: none;">garagemarketingsolution@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                    data-cfemail="b2dbdcd4ddf2d5d3c0d3d5d7dfd3c0d9d7c6dbdcd5c1dddec7c6dbdddcc19cd1dddf">[email&#160;protected]</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Garage Marketing Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/447490302600" target="_blank" class="whatsapp-button">
+            <img src="https://cdn-icons-png.flaticon.com/128/3536/3536445.png" alt="WhatsApp" class="whatsapp-icon" />
+            <span>How can I help you?</span>
+        </a>
+    </div>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+    window.addEventListener('scroll', function () {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenu.addEventListener('click', function () {
+        mobileMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
